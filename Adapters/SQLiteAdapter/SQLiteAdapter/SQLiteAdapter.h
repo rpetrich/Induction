@@ -1,41 +1,42 @@
 //
-//  PostgreSQL.h
-//  NoSQL
+//  SQLiteAdapter.h
+//  SQLiteAdapter
 //
-//  Created by Mattt Thompson on 12/01/24.
+//  Created by Mattt Thompson on 12/03/05.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+
 #import "SQLAdapter.h"
 
 extern NSString * const PostgreSQLErrorDomain;
 
 #pragma mark -
 
-@interface PostgreSQLAdapter : NSObject <DBAdapter>
+@interface SQLiteAdapter : NSObject <DBAdapter>
 
 @end
 
-@interface PostgreSQLConnection : NSObject <SQLConnection>
+@interface SQLiteConnection : NSObject <SQLConnection>
 
-@end
-
-#pragma mark -
-
-@interface PostgreSQLDatabase : NSObject <SQLDatabase>
 @end
 
 #pragma mark -
 
-@interface PostgreSQLTable : NSObject <SQLTable>
+@interface SQLiteDatabase : NSObject <SQLDatabase>
 @end
 
 #pragma mark -
 
-@interface PostgreSQLField : NSObject <SQLField>
+@interface SQLiteTable : NSObject <SQLTable>
+@end
 
-+ (PostgreSQLField *)fieldInPGResult:(void *)pgresult 
+#pragma mark -
+
+@interface SQLiteField : NSObject <SQLField>
+
++ (id <SQLField>)fieldInSQLiteResult:(void *)result 
                              atIndex:(NSUInteger)fieldIndex;
 
 - (id)objectForBytes:(const char *)bytes 
@@ -46,7 +47,7 @@ extern NSString * const PostgreSQLErrorDomain;
 
 #pragma mark -
 
-@interface PostgreSQLTuple : NSObject <SQLTuple>
+@interface SQLiteTuple : NSObject <SQLTuple>
 
 - (id)initWithValuesKeyedByFieldName:(NSDictionary *)keyedValues;
 
@@ -54,8 +55,8 @@ extern NSString * const PostgreSQLErrorDomain;
 
 #pragma mark -
 
-@interface PostgreSQLResultSet : NSObject <SQLResultSet>
+@interface SQLiteResultSet : NSObject <SQLResultSet>
 
-- (id)initWithPGResult:(void *)pgresult;
+- (id)initWithSQLiteStatement:(void *)result;
 
 @end
