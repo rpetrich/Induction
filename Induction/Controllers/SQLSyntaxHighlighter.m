@@ -79,10 +79,6 @@ ZWRC_SYNTHESIZE_GETTER(textView, _textView, NSTextView *);
 }
 
 - (void)setTextView:(NSTextView *)textView {
-    NSTextView *oldTextView = zwrc_load(_textView);
-    zwrc_store(_textView, textView);
-    oldTextView.delegate = nil;
-    oldTextView.textStorage.delegate = nil;
     textView.delegate = self;
     textView.textStorage.delegate = self;
 }
