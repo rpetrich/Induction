@@ -86,8 +86,8 @@
     return @"Redis";
 }
 
-- (NSOrderedSet *)dataSourceGroupNames {
-    return [NSOrderedSet orderedSetWithObjects:NSLocalizedString(@"Keys", nil), nil];
+- (NSArray *)dataSourceGroupNames {
+    return [NSArray arrayWithObjects:NSLocalizedString(@"Keys", nil), nil];
 }
 
 - (NSArray *)dataSourcesForGroupNamed:(NSString *)groupName {

@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import "DBAdapter.h"
+#import "ZWRCompatibility.h"
 
 @class ExploreTableViewController;
 @class QueryViewController;
@@ -21,14 +22,19 @@ enum _DBDatabaseViewTabs {
     VisualizeTab,
 } DBDatabaseViewTabs;
 
-@interface DBDatabaseViewController : NSViewController <NSOutlineViewDelegate>
+@interface DBDatabaseViewController : NSViewController <NSOutlineViewDelegate> {
+@private
+    __zwrc_weak NSToolbar *_toolbar;
+    __zwrc_weak NSOutlineView *_outlineView;
+    __zwrc_weak NSTabView *_tabView;
+}
 
 @property (strong, nonatomic) id <DBDatabase> database;
 @property (strong, nonatomic, readonly) NSArray *sourceListNodes;
 
-@property (weak, nonatomic) IBOutlet NSToolbar *toolbar;
-@property (weak, nonatomic) IBOutlet NSOutlineView *outlineView;
-@property (weak, nonatomic) IBOutlet NSTabView *tabView;
+@property (unsafe_unretained, nonatomic) IBOutlet NSToolbar *toolbar;
+@property (unsafe_unretained, nonatomic) IBOutlet NSOutlineView *outlineView;
+@property (unsafe_unretained, nonatomic) IBOutlet NSTabView *tabView;
 
 @property (strong, nonatomic) IBOutlet ExploreTableViewController *exploreViewController;
 @property (strong, nonatomic) IBOutlet QueryViewController *queryViewController;

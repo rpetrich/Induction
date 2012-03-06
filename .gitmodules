@@ -1,0 +1,3 @@
+[submodule "ZWRCompatibility"]
+	path = ZWRCompatibility
+	url = git://github.com/rpetrich/ZWRCompatibility.git

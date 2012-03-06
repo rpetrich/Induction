@@ -238,8 +238,8 @@ static NSDate * NSDateFromPostgreSQLTimestamp(NSString *timestamp) {
     return _name;
 }
 
-- (NSOrderedSet *)dataSourceGroupNames {
-    return [NSOrderedSet orderedSetWithObject:NSLocalizedString(@"Tables", nil)];
+- (NSArray *)dataSourceGroupNames {
+    return [NSArray arrayWithObject:NSLocalizedString(@"Tables", nil)];
 }
 
 - (NSArray *)dataSourcesForGroupNamed:(NSString *)groupName {
@@ -305,6 +305,15 @@ static NSDate * NSDateFromPostgreSQLTimestamp(NSString *timestamp) {
                                 error:(NSError *__autoreleasing *)error 
 {
     return [[_database connection] executeSQL:query error:error];
+}
+
+#pragma mark -
+
+- (id <DBResultSet>)resultSetForDimension:(NSExpression *)dimension
+                                 measures:(NSArray *)measures
+                                    error:(NSError **)error
+{
+    @throw [NSException exceptionWithName:NSObjectNotAvailableException reason:@"Expression-based result sets not implemented!" userInfo:nil];
 }
 
 @end

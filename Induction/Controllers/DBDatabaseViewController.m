@@ -21,13 +21,20 @@
 
 @implementation DBDatabaseViewController
 @synthesize database = _database;
-@synthesize outlineView = _outlineView;
-@synthesize tabView = _tabView;
-@synthesize toolbar = _toolbar;
+ZWRC_SYNTHESIZE(outlineView, setOutlineView:, _outlineView, NSOutlineView *);
+ZWRC_SYNTHESIZE(tabView, setTabView:, _tabView, NSTabView *);
+ZWRC_SYNTHESIZE(toolbar, setToolbar:, _toolbar, NSToolbar *);
 @synthesize exploreViewController = _exploreViewController;
 @synthesize queryViewController = _queryViewController;
 @synthesize visualizeViewController = _visualizeViewController;
 @synthesize sourceListNodes = _sourceListNodes;
+
+- (void)dealloc
+{
+    zwrc_store(_outlineView, nil);
+    zwrc_store(_tabView, nil);
+    zwrc_store(_toolbar, nil);
+}
 
 - (void)awakeFromNib {
     NSTabViewItem *exploreTabViewItem = [[NSTabViewItem alloc] initWithIdentifier:@"Explore"];

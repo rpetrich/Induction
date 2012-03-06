@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94A723FC1505C1F7003E3B66 /* ZWRCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A723FB1505C1F6003E3B66 /* ZWRCompatibility.m */; };
 		F8202FBD14D0C2DC00950BAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8202F8D14D0C2DC00950BAF /* AppDelegate.m */; };
 		F8202FC014D0C2DC00950BAF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F8202F9314D0C2DC00950BAF /* Credits.rtf */; };
 		F8202FC114D0C2DC00950BAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8202F9514D0C2DC00950BAF /* InfoPlist.strings */; };
@@ -83,6 +84,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		94A723FA1505C1F6003E3B66 /* ZWRCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWRCompatibility.h; path = ../ZWRCompatibility/ZWRCompatibility.h; sourceTree = "<group>"; };
+		94A723FB1505C1F6003E3B66 /* ZWRCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWRCompatibility.m; path = ../ZWRCompatibility/ZWRCompatibility.m; sourceTree = "<group>"; };
 		F8202F8C14D0C2DC00950BAF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8202F8D14D0C2DC00950BAF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F8202F9414D0C2DC00950BAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 		F8202F8B14D0C2DC00950BAF /* Induction */ = {
 			isa = PBXGroup;
 			children = (
+				94A723FA1505C1F6003E3B66 /* ZWRCompatibility.h */,
+				94A723FB1505C1F6003E3B66 /* ZWRCompatibility.m */,
 				F8202F8C14D0C2DC00950BAF /* AppDelegate.h */,
 				F8202F8D14D0C2DC00950BAF /* AppDelegate.m */,
 				F8202F9714D0C2DC00950BAF /* MainMenu.xib */,
@@ -438,6 +443,7 @@
 				F888F57E14DB40990094B805 /* SQLSyntaxHighlighter.m in Sources */,
 				F8662EEE14EC8E5B00F0520B /* DBResultSetViewController.m in Sources */,
 				F8A2C41C14F5CFC10093682A /* DBPaginator.m in Sources */,
+				94A723FC1505C1F7003E3B66 /* ZWRCompatibility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +546,7 @@
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_FILE = Induction/Info.plist;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = Induction;
 				WRAPPER_EXTENSION = app;
 			};
@@ -554,6 +561,7 @@
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_FILE = Induction/Info.plist;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = Induction;
 				WRAPPER_EXTENSION = app;
 			};

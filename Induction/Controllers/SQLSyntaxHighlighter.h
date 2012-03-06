@@ -8,8 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SQLSyntaxHighlighter : NSObject <NSTextViewDelegate, NSTextStorageDelegate>
+#import "ZWRCompatibility.h"
 
-@property (weak, nonatomic) IBOutlet NSTextView *textView;
+@interface SQLSyntaxHighlighter : NSObject <NSTextViewDelegate, NSTextStorageDelegate> {
+@private
+    __zwrc_weak NSTextView *_textView;
+}
+
+@property (assign, nonatomic) IBOutlet NSTextView *textView;
 
 @end

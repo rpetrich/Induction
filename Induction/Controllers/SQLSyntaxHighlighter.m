@@ -68,13 +68,21 @@ static NSDictionary * SQLNormalWordsStyleAttributes() {
 @end
 
 @implementation SQLSyntaxHighlighter
-@synthesize textView = _textView;
+ZWRC_SYNTHESIZE_GETTER(textView, _textView, NSTextView *);
+
+- (void)dealloc {
+    self.textView = nil;
+}
 
 - (void)awakeFromNib {
     _tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:[NSArray arrayWithObject:NSLinguisticTagSchemeTokenType] options:NSLinguisticTaggerOmitWhitespace | NSLinguisticTaggerOmitPunctuation | NSLinguisticTaggerOmitOther];    
 }
 
 - (void)setTextView:(NSTextView *)textView {
+    NSTextView *oldTextView = zwrc_load(_textView);
+    zwrc_store(_textView, textView);
+    oldTextView.delegate = nil;
+    oldTextView.textStorage.delegate = nil;
     textView.delegate = self;
     textView.textStorage.delegate = self;
 }
