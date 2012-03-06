@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		94A723FC1505C1F7003E3B66 /* ZWRCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A723FB1505C1F6003E3B66 /* ZWRCompatibility.m */; };
+		94A7241A1505DD33003E3B66 /* SQLiteAdapter.bundle in Copy Database Adapters */ = {isa = PBXBuildFile; fileRef = 94A724051505CBB1003E3B66 /* SQLiteAdapter.bundle */; };
 		F8202FBD14D0C2DC00950BAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8202F8D14D0C2DC00950BAF /* AppDelegate.m */; };
 		F8202FC014D0C2DC00950BAF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F8202F9314D0C2DC00950BAF /* Credits.rtf */; };
 		F8202FC114D0C2DC00950BAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8202F9514D0C2DC00950BAF /* InfoPlist.strings */; };
@@ -38,6 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		94A724041505CBB1003E3B66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94A723FD1505CBB1003E3B66 /* SQLiteAdapter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F806D62014F2DDF300CE7DB6;
+			remoteInfo = SQLiteAdapter;
+		};
+		94A724061505CD64003E3B66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94A723FD1505CBB1003E3B66 /* SQLiteAdapter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F806D61F14F2DDF300CE7DB6;
+			remoteInfo = SQLiteAdapter;
+		};
 		F884AD3814F3017800AEC751 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F884AD3114F3017800AEC751 /* PostgreSQLAdapter.xcodeproj */;
@@ -75,6 +90,7 @@
 			dstPath = Adapters;
 			dstSubfolderSpec = 13;
 			files = (
+				94A7241A1505DD33003E3B66 /* SQLiteAdapter.bundle in Copy Database Adapters */,
 				F8C9D03A14F301C3005BE0B4 /* PostgreSQLAdapter.bundle in Copy Database Adapters */,
 				F8C9D03914F301BB005BE0B4 /* RedisAdapter.bundle in Copy Database Adapters */,
 			);
@@ -86,6 +102,7 @@
 /* Begin PBXFileReference section */
 		94A723FA1505C1F6003E3B66 /* ZWRCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWRCompatibility.h; path = ../ZWRCompatibility/ZWRCompatibility.h; sourceTree = "<group>"; };
 		94A723FB1505C1F6003E3B66 /* ZWRCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWRCompatibility.m; path = ../ZWRCompatibility/ZWRCompatibility.m; sourceTree = "<group>"; };
+		94A723FD1505CBB1003E3B66 /* SQLiteAdapter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLiteAdapter.xcodeproj; path = Adapters/SQLiteAdapter/SQLiteAdapter.xcodeproj; sourceTree = "<group>"; };
 		F8202F8C14D0C2DC00950BAF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8202F8D14D0C2DC00950BAF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F8202F9414D0C2DC00950BAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -147,6 +164,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94A723FE1505CBB1003E3B66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94A724051505CBB1003E3B66 /* SQLiteAdapter.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F8202F8B14D0C2DC00950BAF /* Induction */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +298,7 @@
 				F873FC4F14D7B9E9002C0ADC /* HTML */,
 				F884AD3114F3017800AEC751 /* PostgreSQLAdapter.xcodeproj */,
 				F884AD3A14F3017E00AEC751 /* RedisAdapter.xcodeproj */,
+				94A723FD1505CBB1003E3B66 /* SQLiteAdapter.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -345,6 +371,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				94A724071505CD64003E3B66 /* PBXTargetDependency */,
 				F8C9D03614F301AA005BE0B4 /* PBXTargetDependency */,
 				F8C9D03814F301AA005BE0B4 /* PBXTargetDependency */,
 			);
@@ -380,6 +407,10 @@
 					ProductGroup = F884AD3B14F3017E00AEC751 /* Products */;
 					ProjectRef = F884AD3A14F3017E00AEC751 /* RedisAdapter.xcodeproj */;
 				},
+				{
+					ProductGroup = 94A723FE1505CBB1003E3B66 /* Products */;
+					ProjectRef = 94A723FD1505CBB1003E3B66 /* SQLiteAdapter.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -389,6 +420,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		94A724051505CBB1003E3B66 /* SQLiteAdapter.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SQLiteAdapter.bundle;
+			remoteRef = 94A724041505CBB1003E3B66 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		F884AD3914F3017800AEC751 /* PostgreSQLAdapter.bundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -450,6 +488,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		94A724071505CD64003E3B66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SQLiteAdapter;
+			targetProxy = 94A724061505CD64003E3B66 /* PBXContainerItemProxy */;
+		};
 		F8C9D03614F301AA005BE0B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PostgreSQLAdapter;
